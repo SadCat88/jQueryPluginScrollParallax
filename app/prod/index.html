@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta http-equiv="X-UA-Compatible" content="ie=edge"/><link rel="shortcut icon" href="./favicon.ico"/><link rel="stylesheet" href="./assets/vendors/bootstrap/css/bootstrap-8f6339b4c1.css"/><link rel="stylesheet" href="./assets/vendors/baguetteBox/css/baguetteBox-c8e3418262.css"/><link rel="stylesheet" href="./assets/css/base-f6882abd36.css"/><link rel="stylesheet" href="./assets/css/main-686682d385.css"/><link rel="stylesheet" href="./pages/index/index-fc64a927d4.css"/><title>jQuery plugin</title></head><body class="vertical-w"><header class="header"> <div class="wrapper header-w"><div class="logo"><img class="logo__image" src="./pages/index/img/SadCat.svg" alt="Logotype" width="80"/><div class="logo__text">SadCat88</div></div><div class="header__heading"><h1>jQuery plugin</h1></div></div></header><main class="main"> <div class="wrapper main-w"><h2 class="content-heading">jQuery plugin: scrollParallax
+
+</h2><h3>Подключение плагина:</h3><h4>HTML</h4><p>Для использования данного плагина
+<br>
+в HTML необходимо обернуть любой контентный текст
+в div с классом .scroll-parallax
+и добавить ему атрибут data-parallax-image,
+в котором хранить путь к картинке для эффекта с паралаксом.
+</p><pre>&lt;div class=&quot;.scroll-parallax&quot; data-parallax-image=&quot;./img&quot;&gt;
+  Текст текст текст
+&lt;/div&gt;
+</pre><p>После выполнения всех инструкций данного плагина в DOM появится следующая структура:
+</p><pre>&lt;div class=&quot;.scroll-parallax&quot; data-parallax-image=&quot;./img&quot;&gt;
+  &lt;div class=&quot;scroll-parallax__image&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;scroll-parallax__content&quot;&gt;Текст текст текст&lt;/div&gt;
+&lt;/div&gt;
+</pre><p>В div с классом scroll-parallax__image фоном будет размещена картинка.
+</p><div class="scroll-parallax" id="id_1" data-parallax-image="./pages/index/img/scroll-parallax-image_1.jpg"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero magni laudantium sed reiciendis deserunt? Modi magni quos, voluptatum velit est, accusantium vel iste quibusdam nesciunt reprehenderit, alias laboriosam in dolorem.</div><h4>CSS</h4><p>Для установки высоты блока с эффектом паралакса в CSS необходимо установить значение минимальной высоты. Это необходимо чтобы после выполнения инструкций плагина не менялась высота блоков и поток не прыгал после первичного рендера страницы.
+</p><pre>.scroll-parallax {
+  min-height: 400px;
+}
+</pre><h4>JS</h4><p>Для подключения данного плагина необходимо в JS добавить следующую запись
+</p><pre>$('.scroll-parallax').scrollParallax();
+</pre><p>По умолчанию скорость перемещения картинки в блоке с эффектом паралакса,
+в два раза выше скорости прокрутки страницы.
+
+Доступна настройка скорости эффекта:
+</p><pre>$('.scroll-parallax').scrollParallax(
+  { parallaxSpeed: 3 }
+);
+</pre><p>Возможно использовать для разных блоков разную скорость,
+в таком случае необходимо в каждом блоке установить id
+и уточнить строку подключения для каждого блока.
+Либо можно раздать каждому блоку уникальный класс.
+</p><pre>$('.scroll-parallax#id_1').scrollParallax(
+  { parallaxSpeed: 3 }
+);
+</pre><p>Значение parallaxSpeed равное 1 отключает эффект паралакса.
+parallaxSpeed не может быть меньше 1.
+Высокие значения parallaxSpeed могут привести к чрезмерному
+растягиванию картинки по высоте.
+
+Растягивание картинки будет всегда, при условии, когда
+установленная в CSS высота блока
+умноженная на parallaxSpeed
+больше физической высоты картинки.<br>
+<span class="warning">Внимание! Данное правило может нарушаться при малых размерах экрана.</span>
+<br>
+Чтобы растягивание картинки не проявлялось,
+необходимо подбирать картинки с большой высотой.
+</p><div class="scroll-parallax" id="id_2" data-parallax-image="./pages/index/img/scroll-parallax-image_2.jpg"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero magni laudantium sed reiciendis deserunt? Modi magni quos, voluptatum velit est, accusantium vel iste quibusdam nesciunt reprehenderit, alias laboriosam in dolorem.</div><p>Не знаю зачем, но данный плагин является адаптивным (отзывчивым).
+При изменении размеров экрана, без обновления страницы происходит пересчет размеров блока, положения картинки и скорости эффекта.
+<br>
+<br>
+</p><p>Еще немного рыбы.
+<br>
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat eligendi accusamus illum molestiae fuga sequi cumque quam totam nobis quaerat dolorem commodi repudiandae ab quod fugit dolorum est iste, reprehenderit iure rem quos earum officia ipsam tempore. Eligendi, maiores iusto. Officia, eaque tempora possimus similique voluptatibus odio animi dolore magnam aliquam ipsam, dolorem beatae perferendis reprehenderit quidem voluptatem quas nesciunt facere quos. Labore non commodi vel dignissimos alias aut sequi adipisci est obcaecati expedita voluptates, temporibus nobis saepe laboriosam eaque vero cumque, vitae soluta recusandae animi magnam? Ipsum eum harum, consequuntur delectus deleniti quae at commodi, similique possimus consectetur sapiente. Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+<br>
+Reprehenderit, quasi corporis iste voluptatum aliquid repellendus? Nam optio iusto dolore quis doloremque ex consectetur, blanditiis soluta, voluptate amet ipsum error, tenetur est tempora temporibus aliquid obcaecati. Quos corporis, nam possimus molestias ratione totam voluptatem quibusdam nisi tempora placeat et praesentium assumenda, animi quae vero soluta optio expedita voluptatibus odit! Rerum iure a nesciunt, iste, totam non sunt ut quas ipsum tempore distinctio magni ipsa libero nobis, error delectus. Repellat perspiciatis iure, exercitationem laborum recusandae minus praesentium quos hic voluptatum? Ullam mollitia minus nihil autem provident, accusantium nesciunt voluptas impedit facilis.
+<br>
+Sunt quaerat labore, odit perferendis, voluptate neque voluptatum eveniet, velit modi ipsum atque qui molestias architecto suscipit reiciendis esse. Molestias doloribus numquam omnis officia beatae? Incidunt quos, illum officiis dolor odit neque delectus modi! Ipsa aut expedita tempore sapiente iste animi. Quas commodi, quam ab enim sunt eaque impedit qui culpa consequuntur ex, incidunt inventore aperiam accusamus omnis voluptas exercitationem temporibus magnam explicabo voluptates. Obcaecati incidunt ducimus assumenda necessitatibus perferendis, asperiores, quidem fugit alias nemo dolorum distinctio harum id temporibus dolor corrupti beatae ad nulla voluptates! Doloribus qui est, minus eveniet molestiae perferendis hic perspiciatis quasi sit, nobis similique nesciunt rem?
+<br>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, inventore repudiandae labore minus molestiae aliquam commodi perferendis repellat dignissimos sapiente beatae harum minima voluptates ut tenetur in nemo natus mollitia delectus, aspernatur alias! Nostrum asperiores itaque, dolor reiciendis tempora iste in voluptatum fuga quo, fugit dolorem similique aperiam id vel. Minus ipsa magnam eum praesentium. Molestias ipsa minus temporibus fuga voluptatem, perspiciatis laboriosam ipsam aperiam consequatur impedit perferendis similique mollitia molestiae corporis repellendus earum, asperiores, veniam error fugit voluptate ipsum iste totam officia rerum? Labore perspiciatis consectetur necessitatibus quod voluptatibus, eveniet voluptatum earum quos ut quae delectus, hic pariatur cupiditate.
+
+</p></div></main><footer class="footer"> <div class="wrapper"></div></footer><script src="./assets/vendors/bootstrap/js/jquery-3.4.1.min.js"></script><script src="./assets/vendors/bootstrap/js/popper.min.js"></script><script src="./assets/vendors/bootstrap/js/bootstrap.min.js"></script><script type="module" src="./index.js"></script></body></html>
